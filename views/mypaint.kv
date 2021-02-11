@@ -1,0 +1,36 @@
+<BaseWidget>:
+
+    background_color: 255, 255, 255, 255
+
+    Button:
+        text: "Clear"
+        on_release: app.clear_canvas()
+        pos: 0, 0
+
+    Button:
+        text: "Feed"
+        on_release: app.submit()
+        pos: 100, 0
+
+    Label:
+        id: output_label
+        text: "Output: "
+        font_size: 25
+        pos: 300, 0
+
+<P>:
+    Label:
+        text: "Please, enter correct digit: "
+        size_hint: 0.6, 0.2
+        pos_hint: {"x":0.2, "top":1}
+
+    TextInput:
+        id: correct_input
+        size_hint: 0.6, 0.2
+        pos_hint: {"x":0.2, "y":0.6}
+
+    Button:
+        text: "Submit"
+        on_release: app.correct_digit_submit(correct_input.text)
+        size_hint: 0.8, 0.2
+        pos_hint: {"x":0.1, "y":0.1}

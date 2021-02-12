@@ -14,10 +14,11 @@ def load_image(path: str) -> np.array:
 
     im = im.crop((left, top, right, bottom))
     im = im.resize((28, 28))
+
     arr = np.array(list(im.getdata()))
     width, height = im.size
 
-    # delete_image(path)
+    delete_image(path)
     return image_to_input(arr, height, width)
 
 
@@ -37,4 +38,3 @@ def image_to_input(image, height, width) -> np.array:
 
 def delete_image(path):
     os.remove(path)
-
